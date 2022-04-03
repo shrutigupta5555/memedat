@@ -6,20 +6,10 @@ from discord.ext import commands
 from dotenv import load_dotenv 
 import os
 
-from deepface import DeepFace
-import numpy as np 
-
-from PIL import Image
 
 bot = commands.Bot(command_prefix='!!')
 load_dotenv()
 
-
-#detect emotions 
-
-def detect():
-    analyze = DeepFace.analyze(img_path="m.png", actions=['emotion'])  #here the first parameter is the image we want to analyze #the second one there is the action
-    return analyze['dominant_emotion']
 
 
 @bot.command()
@@ -29,7 +19,7 @@ async def ping(ctx):
 
 @bot.command()
 async def prompt(ctx):
-    await ctx.send('p')
+    await ctx.send_file('p')
 
 
 
